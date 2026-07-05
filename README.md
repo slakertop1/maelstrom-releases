@@ -6,6 +6,8 @@ an HTML report. Ships with a headless CLI for CI/Kubernetes.
 
 > Pull your API into the maelstrom.
 
+![Maelstrom — compose a request, run it under load, get a report](assets/demo.gif)
+
 ## Download
 
 Grab the file for your OS from the **[Releases](../../releases)** tab:
@@ -18,6 +20,16 @@ Grab the file for your OS from the **[Releases](../../releases)** tab:
 **Windows:** on first launch SmartScreen may warn (the app isn't code-signed yet) —
 click **More info** → **Run anyway**.
 **macOS:** the app isn't notarized — right-click it → **Open** (once), then launch normally.
+
+## Screenshots
+
+**HTTP client** — compose a request, send it, inspect the response:
+
+![HTTP client showing a 200 OK JSON response](assets/screenshot-http.png)
+
+**Load testing** — virtual users, live charts, latency percentiles and an HTML report:
+
+![Load-test report with throughput and latency charts](assets/screenshot-load.png)
 
 ## Features
 
