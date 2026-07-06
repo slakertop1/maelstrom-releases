@@ -41,6 +41,18 @@ click **More info** → **Run anyway**.
 - OpenAPI/Swagger import, multi-endpoint "service load".
 - **CLI** for pipelines: thresholds → exit codes, Docker image, k8s manifests.
 
+## CLI (headless — for CI / Kubernetes)
+
+The same load engine ships as a small CLI. Grab a binary from [Releases](../../releases) — `maelstrom-windows-x64.exe`, `maelstrom-macos`, or `maelstrom-linux-x64` — or pull the container:
+
+```bash
+docker pull ghcr.io/slakertop1/maelstrom-cli:latest
+docker run --rm -v "$PWD:/work" ghcr.io/slakertop1/maelstrom-cli:latest \
+  /work/scenario.json --out-json /work/report.json --max-error-rate 1 --max-p95 400
+```
+
+Export a scenario from the app, point the CLI at it, and inject secrets via environment variables (referenced as `${VAR}` in the config). It writes JSON + HTML reports and **exits non-zero when a threshold is breached**, so your pipeline gates on it. Ready-made Kubernetes Job/CronJob and GitLab CI examples are included.
+
 ## Feedback
 
 - 🐞 **Bug?** In the app: **Logs** → **Report a bug** (bundles version, OS and the log) —
