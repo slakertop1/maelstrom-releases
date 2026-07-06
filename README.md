@@ -53,6 +53,8 @@ docker run --rm -v "$PWD:/work" ghcr.io/slakertop1/maelstrom-cli:latest \
 
 Export a scenario from the app, point the CLI at it, and inject secrets via environment variables (referenced as `${VAR}` in the config). It writes JSON + HTML reports and **exits non-zero when a threshold is breached**, so your pipeline gates on it. Ready-made **GitHub Actions**, GitLab CI, and Kubernetes Job/CronJob examples are in [`deploy/`](deploy/).
 
+**Nothing to point it at?** [`examples/demo-api/`](examples/demo-api/) has a tiny live API (OpenAPI spec + a ready load scenario) — import the spec, or run the CLI against it in seconds.
+
 ## Feedback
 
 - 🐞 **Bug?** In the app: **Logs** → **Report a bug** (bundles version, OS and the log) —
