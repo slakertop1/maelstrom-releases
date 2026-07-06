@@ -41,10 +41,6 @@ click **More info** → **Run anyway**.
 - OpenAPI/Swagger import, multi-endpoint "service load".
 - **CLI** for pipelines: thresholds → exit codes, Docker image, k8s manifests.
 
-## Beta
-
-This is a **time-limited** beta: each build stops working ~6 months after it was built. When yours expires, grab a fresh build from [Releases](../../releases) — the app warns you a couple of weeks ahead. Beta builds are provided as-is for evaluation and don't grant a license to future paid versions.
-
 ## Feedback
 
 - 🐞 **Bug?** In the app: **Logs** → **Report a bug** (bundles version, OS and the log) —
