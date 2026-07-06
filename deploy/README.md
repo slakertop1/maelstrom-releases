@@ -76,6 +76,26 @@ ca-certificates, running as non-root.
 
 `backoffLimit: 0` — a breached threshold (exit 1) fails the Job and doesn't retry.
 
+## GitHub Actions
+
+See `github-actions-example.yml`. It runs the CLI (via the container image) as a
+step, **fails the job on a breached threshold**, and keeps the HTML report as an
+artifact. Secrets come from GitHub Actions secrets and reach the scenario as `${VAR}`.
+
+```yaml
+- name: Load test (gates the job)
+  env:
+    OAUTH_CLIENT_SECRET: ${{ secrets.OAUTH_CLIENT_SECRET }}
+  run: |
+    docker run --rm -v "$PWD:/work" -w /work -e OAUTH_CLIENT_SECRET \
+      ghcr.io/slakertop1/maelstrom-cli:latest \
+      scenario.json --out-json report.json --out-html report.html \
+      --max-error-rate 1 --max-p95 400
+- uses: actions/upload-artifact@v4
+  if: always()
+  with: { name: loadtest-report, path: "report.*" }
+```
+
 ## GitLab CI
 
 See `gitlab-ci-example.yml` — the job fails on a breached threshold and keeps the
