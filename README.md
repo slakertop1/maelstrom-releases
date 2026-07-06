@@ -16,10 +16,14 @@ Grab the file for your OS from the **[Releases](../../releases)** tab:
 |----|------|
 | Windows | `Maelstrom_x64.msi` (installer) or `Maelstrom.exe` (portable, no install) |
 | macOS | `Maelstrom_universal.dmg` |
+| Linux — Debian/Ubuntu/Mint | `Maelstrom_amd64.deb` |
+| Linux — Fedora/RHEL/openSUSE | `Maelstrom.x86_64.rpm` |
+| Linux — any distro (portable) | `Maelstrom_amd64.AppImage` |
 
 **Windows:** on first launch SmartScreen may warn (the app isn't code-signed yet) —
 click **More info** → **Run anyway**.
 **macOS:** the app isn't notarized — right-click it → **Open** (once), then launch normally.
+**Linux:** `.deb` → `sudo apt install ./Maelstrom_amd64.deb`; `.rpm` → `sudo dnf install ./Maelstrom.x86_64.rpm`; `.AppImage` → `chmod +x` then run.
 
 ## Screenshots
 
