@@ -10,7 +10,8 @@ an HTML report. Ships with a headless CLI for CI/Kubernetes.
 
 ## Download
 
-Grab the file for your OS from the **[Releases](../../releases)** tab:
+Grab the file for your OS from the **[Releases](../../releases)** tab.
+What's new in each version — in the [CHANGELOG](CHANGELOG.md).
 
 | OS | File |
 |----|------|
